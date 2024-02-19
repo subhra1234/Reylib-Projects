@@ -1,5 +1,5 @@
 The project contaians interactive physics simulations. 
-# prerequisite
+# Prerequisite
 - make sure C++ is installed in your computer
 - Install raylib from the official site
 
