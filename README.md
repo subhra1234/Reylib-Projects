@@ -7,4 +7,5 @@ The project contaians interactive physics simulations.
 ## Windows
 In vs-code press f5 to build the project.
 ## Linux
-Run the build.bash file in the terminal
+replace the line cd ~Documents.... in the build.bash with the directory of your downloaded copy,
+and run the build.bash file in the terminal
