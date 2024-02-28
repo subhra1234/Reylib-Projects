@@ -1,18 +1,17 @@
 #include <raylib.h>
 #include "particle.hpp"
-#include <string>
 #include <rlgl.h>
 #include <iostream>
 #include <math.h>
+#include <sys/types.h>
 #include <vector>
-#include <algorithm>
 float randMToN(float M, float N);
 Vector3 randomMizeV(float V);
 Color getColor(float strength);
 
 
 int main(){
-    int W=640, H=600, N=2;
+    int W=640, H=600, N=200;
     float boxLength=10;
     Vector3 boxPosition=Null();
     InitWindow(W, H,"Gas eqn");
@@ -25,13 +24,13 @@ int main(){
     cam.projection = CAMERA_PERSPECTIVE;
 
     //Particles
-    std::cout<<randMToN(-20,20);
     Particle ps[N];
     int T=300;
     float c_rms=sqrt(3*T);
+    //initialising position and momentum
     for(int i=0; i<N;i++){
         Vector3 pos={randMToN(-boxLength/2,boxLength/2),randMToN(-boxLength/2,boxLength/2),randMToN(-boxLength/2,boxLength/2)};
-        Vector3 vel={0,0,0};
+        Vector3 vel=randomMizeV(c_rms);
         ps[i]= Particle(pos, vel, Null(), 1,0.1);
     }
     SetTargetFPS(60);
@@ -62,18 +61,6 @@ int main(){
                 netMomChange+=mag(dv)*ps[i].mass;
                 avgVel+=mag(ps[i].vel)/N;
 
-                for(int j=0; j<N; j++){
-                    if(i!=j){
-                        float _r=mag(ps[i].pos-ps[j].pos);
-                        netForce=netForce+ (ps[i].pos-ps[j].pos)*(-10*ps[i].mass*(ps[j].mass)/pow(_r,3));
-                        if(_r<=1 && std::find(col.begin(), col.end(), (i+j))==col.end()){
-                            Vector3 p2v =ps[j].vel;
-                            ps[j].vel=ps[i].vel;
-                            ps[i].vel= p2v;
-                            col.push_back(i+j);
-                        }
-                    }
-                }
                 ps[i].draw(RED);
                 ps[i].move(netForce,dt);
             }
@@ -113,6 +100,7 @@ float randMToN(float M, float N)
     return M + (rand() / ( RAND_MAX / (N-M) ) ) ;  
 }
 
+//initiates random velocity accoring to c_rms
 Vector3 randomMizeV(float V){
     float target= V+randMToN(-20,20);
     float vx= randMToN(-target, target);
@@ -124,5 +112,5 @@ Vector3 randomMizeV(float V){
 
 Color getColor(float strength){
     if (strength>255){strength=255;}
-    return {strength*3, 255-3*strength,0,255};
+    return {static_cast<unsigned char>(strength*3), static_cast<unsigned char>(255-3*strength),0,255};
 }
