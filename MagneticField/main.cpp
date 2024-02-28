@@ -83,7 +83,7 @@ int main(){
         if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON)){
                 w.addPoints(ScreenToWorld(cam));
            }
-        if(IsKeyPressed(KEY_DELETE)){
+        if(IsKeyPressed(KEY_DELETE)||GetTouchPointCount()==2){
             if(w.currentPointsSize>0){
             w.currentPointsSize-=1;}
         }

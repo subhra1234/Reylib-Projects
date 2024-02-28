@@ -23,7 +23,8 @@
         }
 
         h1 {
-            color: rgba(162, 247, 225, 0.493);
+            color: rgba(247, 226, 255, 0.829);
+            user-select: none;
         }
 
         .navdiv {
@@ -43,9 +44,9 @@
 </head>
 
 <body>
-    <h1> Welcome to Physics Simulation Homepage </h1>
+    <h1>Physics Simulations </h1>
 
-    <div style="display: flex; justify-content: flex-start;">
+    <div style="display: flex; flex-wrap: wrap;">
 
         <div class="navdiv" id="leftdiv">
             <p style="padding-left: 18px;"> Select the simulation you want to open</p>
@@ -69,7 +70,16 @@
         </div>
     </div>
 
-    <p>Image by <a
+    <div class="navdiv">
+        <p> For mobile devices. Follow the keymap below</p>
+        <ul>
+            <li>Tap once to create items (like pendulum)</li>
+            <li>Tap with two fingers to delete items</li>
+            <li>Tap with three fingers to start simulation (if not started)</li>
+        </ul>
+    </div>
+
+    <p style="position: fixed; bottom: 0;">Image by <a
         href="https://www.freepik.com/free-vector/background-realistic-abstract-technology-particle_6938839.htm#query=website%20background&position=1&from_view=keyword&track=ais&uuid=456f5a22-9070-4291-a6e5-42053832b76a">Freepik</a>
 </p>
     

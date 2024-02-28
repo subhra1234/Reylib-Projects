@@ -94,8 +94,8 @@ int main(){
             trailCurrentSize-=1;
             }
         }
-        if(IsKeyPressed(KEY_I)){isInputMode=!isInputMode;}
-        if(IsKeyPressed(KEY_DELETE)){
+        if(IsKeyPressed(KEY_I) || GetTouchPointCount()==3){isInputMode=!isInputMode;}
+        if(IsKeyPressed(KEY_DELETE) || GetTouchPointCount()==2){
             for(int i=1; i<pendulumSize;i++){pendulumSize-=1;}
              pendulums[0].theta=PI/12; pendulums[0].velocity={0,0}; pendulums[0].resetPosition();}
 
@@ -137,7 +137,6 @@ int main(){
         if(isInputMode){
             DrawText("Left-Click to add a new Bob.\nPress Delete to remove Bobs.\nPress I to simulate", 20, H-50,20, LIGHTGRAY);
         }
-        
     }
 
     CloseWindow();
