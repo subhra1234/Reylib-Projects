@@ -1,20 +1,78 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simulations By Subhra</title>
+
+    <style>
+        body {
+            margin: 2%;
+            background-image: url(3409297.jpg);
+            color: rgba(250, 235, 215, 0.5);
+        }
+
+        a {
+            color: rgba(255, 222, 161, 0.596);
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: orange;
+        }
+
+        h1 {
+            color: rgba(162, 247, 225, 0.493);
+        }
+
+        .navdiv {
+            align-content: center;
+            padding: 16px;
+            margin: 4px;
+            padding-right: 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            color: rgba(255, 255, 255, 0.815);
+            background-color: rgba(197, 175, 175, 0.315);
+            width:fit-content;
+            font-size: large;
+        }
+        
+    </style>
 </head>
-<body style="margin: 8%;background-image: url(3409297.jpg); color: rgba(250, 235, 215, 0.5);">
-    <h1 style="align-self: center; color: rgba(223, 255, 244, 0.705);"> Welcome to Physics Simulation Homepage</h1>
-    <div style="align-content: center; margin: 5%; padding: 2%;border-radius: 20px; backdrop-filter: blur(10px); color: rgba(240, 248, 255, 0.596);background-color: rgba(122, 75, 101, 0.315);">
-        <p style="padding-left: 18px;"> Select the simulation you want to open</p>
+
+<body>
+    <h1> Welcome to Physics Simulation Homepage </h1>
+
+    <div style="display: flex; justify-content: flex-start;">
+
+        <div class="navdiv" id="leftdiv">
+            <p style="padding-left: 18px;"> Select the simulation you want to open</p>
+
+            <ul>
+                <li><a href="n_pendulum/index.html">N-Pendulum</a> </li>
+                <li><a href="magneticField/index.html">Magnetic Fields</a></li>
+            </ul>
+        </div>
+
+        <div class="navdiv" id="rightdiv">
+            <p>The source code of all the projects are available <a
+                    href="https://github.com/subhra1234/Reylib-Projects">here</a>
+            </p>
+            <p>To build the source code on your system, you will need the following installed,
+            <ul>
+                <li>C++ compiler (such as gcc or g++)</li>
+                <li>Raylib Library</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+
+    <p>Image by <a
+        href="https://www.freepik.com/free-vector/background-realistic-abstract-technology-particle_6938839.htm#query=website%20background&position=1&from_view=keyword&track=ais&uuid=456f5a22-9070-4291-a6e5-42053832b76a">Freepik</a>
+</p>
     
-    <ul>
-        <li><a href="n_pendulum/index.html">N-Pendulum</a> </li>
-        <li><a href="magneticField/index.html">Magnetic Fields</a> </li>
-        <li><a href="">Gas Equations</a></li>
-    </ul>
-</div>
-<p>Image by <a href="https://www.freepik.com/free-vector/background-realistic-abstract-technology-particle_6938839.htm#query=website%20background&position=1&from_view=keyword&track=ais&uuid=456f5a22-9070-4291-a6e5-42053832b76a">Freepik</a></p>
 </body>
+
 </html>
