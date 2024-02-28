@@ -94,8 +94,8 @@ int main(){
             trailCurrentSize-=1;
             }
         }
-        if(IsKeyPressed(KEY_I) || GetTouchPointCount()==3){isInputMode=!isInputMode;}
-        if(IsKeyPressed(KEY_DELETE) || GetTouchPointCount()==2){
+        if(IsKeyPressed(KEY_I) || GetTouchPointCount()==2){isInputMode=!isInputMode;}
+        if(IsKeyPressed(KEY_DELETE) || GetTouchPointCount()==3){
             for(int i=1; i<pendulumSize;i++){pendulumSize-=1;}
              pendulums[0].theta=PI/12; pendulums[0].velocity={0,0}; pendulums[0].resetPosition();}
 
